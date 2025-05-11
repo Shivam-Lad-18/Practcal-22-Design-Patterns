@@ -1,4 +1,5 @@
 ﻿using EmployeeDAL.Models;
+using EmployeeDAL.Models.DTO;
 using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,7 @@ namespace EmployeeDAL.Services
 {
     public class EmployeeRepository
     {
-        public void Create(Employee emp)
+        public void Create(AddEmployeeDTO emp)
         {
             using (var conn = DbService.Instance.GetConnection())
             {

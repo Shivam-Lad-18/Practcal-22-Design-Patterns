@@ -12,3 +12,4 @@ C:\Users\HP\source\repos\Practical-22\EmployeeDAL\obj\Debug\net8.0\refint\Employ
 C:\Users\HP\source\repos\Practical-22\EmployeeDAL\obj\Debug\net8.0\EmployeeDAL.pdb
 C:\Users\HP\source\repos\Practical-22\EmployeeDAL\obj\Debug\net8.0\EmployeeDAL.genruntimeconfig.cache
 C:\Users\HP\source\repos\Practical-22\EmployeeDAL\obj\Debug\net8.0\ref\EmployeeDAL.dll
+C:\Users\HP\source\repos\Practical-22\EmployeeDAL\obj\Debug\net8.0\EmployeeDAL.sourcelink.json

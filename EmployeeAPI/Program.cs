@@ -10,7 +10,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<DbService>();  // Singleton for DB connection
 builder.Services.AddScoped<EmployeeRepository>(); // Scoped for repository
-
+builder.Services.AddSingleton<ILoggerService, FileLoggerService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

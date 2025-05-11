@@ -1,8 +1,8 @@
 ﻿using EmployeeDAL.Services;
 using EmployeeDAL;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using EmployeeDAL.Models;
+using EmployeeDAL.Models.DTO;
 
 namespace EmployeeAPI.Controllers
 {
@@ -11,18 +11,20 @@ namespace EmployeeAPI.Controllers
     public class EmployeeController : ControllerBase
     {
         private readonly EmployeeRepository _repo;
+        private readonly ILoggerService _logger;
 
-        // Inject the repository via constructor
-        public EmployeeController(EmployeeRepository repo)
+        // Inject both repository and logger via constructor
+        public EmployeeController(EmployeeRepository repo, ILoggerService logger)
         {
             _repo = repo;
+            _logger = logger;
         }
 
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
             var emp = _repo.GetById(id);
-            LoggerService.Log($"Fetched employee with ID {id}");
+            _logger.Log($"Fetched employee with ID {id}");
             return emp == null ? NotFound() : Ok(emp);
         }
 
@@ -30,15 +32,15 @@ namespace EmployeeAPI.Controllers
         public IActionResult GetAll()
         {
             var employees = _repo.GetAll();
-            LoggerService.Log("Fetched all employees");
+            _logger.Log("Fetched all employees");
             return Ok(employees);
         }
 
         [HttpPost]
-        public IActionResult Create(Employee emp)
+        public IActionResult Create(AddEmployeeDTO emp)
         {
             _repo.Create(emp);
-            LoggerService.Log($"Created employee {emp.EmployeeName}");
+            _logger.Log($"Created employee {emp.EmployeeName}");
             return Ok("Employee added");
         }
 
@@ -46,7 +48,7 @@ namespace EmployeeAPI.Controllers
         public IActionResult Update(Employee emp)
         {
             _repo.Update(emp);
-            LoggerService.Log($"Updated employee ID {emp.EmployeeId}");
+            _logger.Log($"Updated employee ID {emp.EmployeeId}");
             return Ok("Employee updated");
         }
 
@@ -54,7 +56,7 @@ namespace EmployeeAPI.Controllers
         public IActionResult Delete(int id)
         {
             _repo.SoftDelete(id);
-            LoggerService.Log($"Soft deleted employee ID {id}");
+            _logger.Log($"Soft deleted employee ID {id}");
             return Ok("Employee soft deleted");
         }
     }

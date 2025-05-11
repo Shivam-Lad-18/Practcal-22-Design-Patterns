@@ -86,3 +86,4 @@ C:\Users\HP\source\repos\Practical-22\EmployeeAPI\obj\Debug\net8.0\refint\Employ
 C:\Users\HP\source\repos\Practical-22\EmployeeAPI\obj\Debug\net8.0\EmployeeAPI.pdb
 C:\Users\HP\source\repos\Practical-22\EmployeeAPI\obj\Debug\net8.0\EmployeeAPI.genruntimeconfig.cache
 C:\Users\HP\source\repos\Practical-22\EmployeeAPI\obj\Debug\net8.0\ref\EmployeeAPI.dll
+C:\Users\HP\source\repos\Practical-22\EmployeeAPI\obj\Debug\net8.0\EmployeeAPI.sourcelink.json
