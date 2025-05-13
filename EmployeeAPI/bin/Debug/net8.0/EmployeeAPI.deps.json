@@ -668,7 +668,10 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "9.0.4"
         },
         "runtime": {
-          "EmployeeDAL.dll": {}
+          "EmployeeDAL.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }
