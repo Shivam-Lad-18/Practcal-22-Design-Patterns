@@ -12,7 +12,7 @@ namespace EmployeeDAL.Services
         private static readonly Lazy<DbService> _instance = new Lazy<DbService>(() => new DbService());
         private readonly string _connectionString;
 
-        public DbService()
+        private DbService()
         {
             _connectionString = "Server=SHIVAM-PC\\SQLEXPRESS;Database=DesignPatterns;Trusted_Connection=True;Encrypt=False;";
         }

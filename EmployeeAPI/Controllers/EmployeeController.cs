@@ -23,7 +23,7 @@ namespace EmployeeAPI.Controllers
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
-            var emp = _repo.GetById(id);
+            Employee emp = _repo.GetById(id);
             _logger.Log($"Fetched employee with ID {id}");
             return emp == null ? NotFound() : Ok(emp);
         }
@@ -31,7 +31,7 @@ namespace EmployeeAPI.Controllers
         [HttpGet]
         public IActionResult GetAll()
         {
-            var employees = _repo.GetAll();
+            List<Employee> employees = _repo.GetAll();
             _logger.Log("Fetched all employees");
             return Ok(employees);
         }
